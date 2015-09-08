@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheapAsChips", "CheapAsChips\CheapAsChips.csproj", "{794E5F1E-9CCF-4F99-92F2-853B4991D517}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheapAsChips.Tests", "CheapAsChips.Tests\CheapAsChips.Tests.csproj", "{D6118BF9-54E9-4B78-AE4D-63629768B589}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{794E5F1E-9CCF-4F99-92F2-853B4991D517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{794E5F1E-9CCF-4F99-92F2-853B4991D517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{794E5F1E-9CCF-4F99-92F2-853B4991D517}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{794E5F1E-9CCF-4F99-92F2-853B4991D517}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6118BF9-54E9-4B78-AE4D-63629768B589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6118BF9-54E9-4B78-AE4D-63629768B589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6118BF9-54E9-4B78-AE4D-63629768B589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6118BF9-54E9-4B78-AE4D-63629768B589}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
