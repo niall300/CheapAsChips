@@ -21,8 +21,8 @@ namespace CheapAsChips.Models
         public int NumberOfServings { get; set; }
         public Ingredient IngredientList { get; set; }
         public Instructions InstructionList { get; set; }
-        public Images Pictures { get; set; }
-        public NutritionInformation NutriInfo { get; set; }
+        //public Images Pictures { get; set; }
+        //public NutritionInformation NutriInfo { get; set; }
         public string Notes { get; set; }
         public string Tip { get; set; }
         public Boolean Blender { get; set; }
@@ -30,6 +30,6 @@ namespace CheapAsChips.Models
         public MealType MealType { get; set; }
         public FoodType FoodType { get; set; }
         public Boolean Spicy { get; set; }
-        public CookingTime Time { get; set; }
+        //public CookingTime Time { get; set; }
     }
 }
