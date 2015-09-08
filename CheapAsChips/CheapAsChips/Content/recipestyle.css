@@ -1,0 +1,101 @@
+﻿@charset: "UTF-8"
+/*A CSS rule set consists of a selector and a declaration block:*/
+/* the section below is vital */
+article, aside, title, footer, header, main, nav, section {
+	/*allows elements to be on seperate lines
+		older ie versions need some javascript to work*/
+	display: block
+ 
+ }
+ 
+ html{
+	/* background-image: url("../images/rusticboard.jpg"); */
+	 background: url("../images/rusticboard.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: auto 200%; 
+ }
+ title{
+ 
+ }
+ 
+ body{
+		/* background-color: #bbbbbb; */
+		/*background-image: url("../images/rusticboard.jpg");*/
+ }
+ h2{
+		
+	background-color: #11233b;
+	color: red;
+	text-align: center;
+	width: 250px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: .25em;
+	
+	
+ }
+ 
+  h3{
+		
+	background-color: #B4CDCD;
+	color: red;
+	text-align: center;
+	width: 250px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: .25em;
+	
+	
+ 
+ }
+ 
+ /* CLASSES*/
+ .myFont{
+ 
+	font: italic small-caps bold 20px/1.5 "Comic Sans MS", Arial, sans-serif;
+	outline-color: red;
+    outline-style: solid;
+    outline-width: thick;
+
+ }
+ .ingredients{
+	background-image: url("../images/agedpaper.png");
+	
+	float: right;
+	width: 15em;
+	height: 27em;
+	font-size: 2em;
+	color: red;
+	text-align: center;
+	
+	margin-right: auto;
+	margin-left: auto;
+	padding: 1em;
+ 
+ }
+ 
+ .polaroid{
+	
+	
+	float: left;
+	width: .75em;
+	height: 27em;
+	font-size: 2em;
+	color: red;
+	
+	
+	margin-right: auto;
+	margin-left: auto;
+	padding: 1em;
+ 
+ }
+ .box{
+	
+	width: 75em;
+ }
+ 
+ /*IDS*/
+ 
+ #recipeTitle {color: yellow;}
