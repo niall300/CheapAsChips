@@ -14,13 +14,13 @@ namespace CheapAsChips.Models
     public class Recipe
     {
         [Key]
-        public int RecipeId { get; set; }
+        public int RecipeID { get; set; }
+        public DateTime dateAdded { get; set; }
         public string Title { get; set; }
         public string MainIngredient { get; set; }
         public string description { get; set; }
         public int NumberOfServings { get; set; }
-        public Ingredient IngredientList { get; set; }
-        public Instructions InstructionList { get; set; }
+       
         //public Images Pictures { get; set; }
         //public NutritionInformation NutriInfo { get; set; }
         public string Notes { get; set; }
@@ -31,5 +31,11 @@ namespace CheapAsChips.Models
         public FoodType FoodType { get; set; }
         public Boolean Spicy { get; set; }
         //public CookingTime Time { get; set; }
+
+        //Navigation Properties
+        public virtual ICollection<Recipe_Ingredient> Ingredients { get; set; }
+
+
+
     }
 }

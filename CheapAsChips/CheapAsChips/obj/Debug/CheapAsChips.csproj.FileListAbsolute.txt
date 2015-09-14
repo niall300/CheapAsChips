@@ -58,3 +58,4 @@ C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\Microsoft.Owin.Security
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\obj\Debug\CheapAsChips.dll
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\obj\Debug\CheapAsChips.pdb
+C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\obj\Debug\CheapAsChips.csprojResolveAssemblyReference.cache
