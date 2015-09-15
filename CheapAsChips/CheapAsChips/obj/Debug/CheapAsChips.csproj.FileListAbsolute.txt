@@ -30,6 +30,8 @@ C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\System.Web.WebPages.Dep
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\System.Web.WebPages.dll
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\System.Web.WebPages.Razor.dll
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\WebGrease.dll
+C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\EntityFramework.xml
+C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\EntityFramework.SqlServer.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\System.Web.Helpers.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\System.Web.Mvc.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\System.Web.Optimization.xml
@@ -42,8 +44,6 @@ C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\Newtonsoft.Json.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\System.Net.Http.Formatting.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\System.Web.Http.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\System.Web.Http.WebHost.xml
-C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\EntityFramework.xml
-C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\EntityFramework.SqlServer.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\Microsoft.AspNet.Identity.Core.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips\bin\Microsoft.AspNet.Identity.EntityFramework.xml

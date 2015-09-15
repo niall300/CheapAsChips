@@ -26,14 +26,16 @@ namespace CheapAsChips.Models
         public string Notes { get; set; }
         public string Tip { get; set; }
         public Boolean Blender { get; set; }
-        public Method Method { get; set; }
+
+        //The '?' allows our enum to be null
+        public Method? Method { get; set; }
         public MealType MealType { get; set; }
         public FoodType FoodType { get; set; }
         public Boolean Spicy { get; set; }
         //public CookingTime Time { get; set; }
 
         //Navigation Properties
-        public virtual ICollection<Recipe_Ingredient> Ingredients { get; set; }
+        public virtual ICollection<Recipe_Ingredient> Recipe_Ingredients { get; set; }
 
 
 

@@ -15,8 +15,8 @@ namespace CheapAsChips.DAL
         {
         }
 
-            public DbSet<Recipe> Students { get; set; }
-            public DbSet<Recipe_Ingredient> recipe_Ingredient { get; set; }
+            public DbSet<Recipe> Recipe { get; set; }
+            public DbSet<Recipe_Ingredient> Recipe_Ingredient { get; set; }
             public DbSet<Ingredient> Ingredients { get; set; }
 
             protected override void OnModelCreating(DbModelBuilder modelBuilder)

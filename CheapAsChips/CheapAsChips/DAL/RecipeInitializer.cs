@@ -12,7 +12,7 @@ namespace CheapAsChips.DAL
     {
         protected override void Seed(RecipeContext context)
         {
-            //create two recipes 
+            //create a list of recipes 
             var recipes = new List<Recipe>
             {
                 new Recipe{ Title ="Cheese Sandwich", MainIngredient = "Cheese", Blender= false,
@@ -28,42 +28,36 @@ namespace CheapAsChips.DAL
                     dateAdded=DateTime.Parse("2015-09-01")}
             };
 
-           
-           // recipes.ForEach(s => context.Ingredients.Add(s));
+           //itrerate through the list and add to database table "Recipe"
+            recipes.ForEach(s => context.Recipe.Add(s));
             context.SaveChanges();
 
-            //add some ingredients
+            //do the same for ingredients table
             var ingredients = new List<Ingredient>
             {
-            new Ingredient{   Measure = "piece", Name = "Sliced Bread", Quantity = 2 },
-            new Ingredient{   Measure = "grams", Name = "Cheddar Cheese", Quantity = 200 },
-            new Ingredient{   Measure = "grams", Name = "Butter", Quantity = 30 }
+                new Ingredient{   Measure = "piece", Name = "Sliced Bread", Quantity = 2 },
+                new Ingredient{   Measure = "grams", Name = "Cheddar Cheese", Quantity = 200 },
+                new Ingredient{   Measure = "grams", Name = "Butter", Quantity = 30 }
 
            
             };
 
-            recipes.ForEach(s => context.Ingredients(s));
+            ingredients.ForEach(s => context.Ingredients.Add(s));
             context.SaveChanges();
 
 
+            //***here we add our association table data. This allows us to connect
+            //recipe ID=1 (cheese sandwich) with its relevant ingredients
+           var recipe_Ingredients = new List<Recipe_Ingredient>
+            {
+                
+                new Recipe_Ingredient{  RecipeID= 1, Recipe_IngredientID = 1},
+                new Recipe_Ingredient{ RecipeID=1, Recipe_IngredientID= 2},
+                new Recipe_Ingredient{ RecipeID=1, Recipe_IngredientID= 3}
+            };
 
-            //var enrollments = new List<Enrollment>
-            //{
-            //new Enrollment{StudentID=1,CourseID=1050,Grade=Grade.A},
-            //new Enrollment{StudentID=1,CourseID=4022,Grade=Grade.C},
-            //new Enrollment{StudentID=1,CourseID=4041,Grade=Grade.B},
-            //new Enrollment{StudentID=2,CourseID=1045,Grade=Grade.B},
-            //new Enrollment{StudentID=2,CourseID=3141,Grade=Grade.F},
-            //new Enrollment{StudentID=2,CourseID=2021,Grade=Grade.F},
-            //new Enrollment{StudentID=3,CourseID=1050},
-            //new Enrollment{StudentID=4,CourseID=1050,},
-            //new Enrollment{StudentID=4,CourseID=4022,Grade=Grade.F},
-            //new Enrollment{StudentID=5,CourseID=4041,Grade=Grade.C},
-            //new Enrollment{StudentID=6,CourseID=1045},
-            //new Enrollment{StudentID=7,CourseID=3141,Grade=Grade.A},
-            //};
-            //enrollments.ForEach(s => context.Enrollments.Add(s));
-            //context.SaveChanges();
+           recipe_Ingredients.ForEach(s => context.Recipe_Ingredient.Add(s));
+           context.SaveChanges();
         }
     }
 }

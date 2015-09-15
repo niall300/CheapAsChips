@@ -2,6 +2,8 @@ C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\CheapAsChip
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\CheapAsChips.Tests.dll
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\CheapAsChips.Tests.pdb
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\CheapAsChips.dll
+C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\EntityFramework.dll
+C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\EntityFramework.SqlServer.dll
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\Newtonsoft.Json.dll
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\System.Web.Helpers.dll
@@ -17,13 +19,14 @@ C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\System.Web.
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\Microsoft.Owin.dll
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\Owin.dll
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\System.Web.Http.dll
-C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\EntityFramework.dll
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\Microsoft.Owin.Security.dll
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\System.Web.Http.WebHost.dll
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\System.Net.Http.Formatting.dll
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\CheapAsChips.pdb
+C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\EntityFramework.xml
+C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\EntityFramework.SqlServer.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\Newtonsoft.Json.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\System.Web.Helpers.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\System.Web.Mvc.xml
@@ -37,7 +40,6 @@ C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\Microsoft.A
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\System.Web.Optimization.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\Microsoft.Owin.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\System.Web.Http.xml
-C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\EntityFramework.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\Microsoft.Owin.Security.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
