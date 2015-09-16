@@ -51,9 +51,13 @@ namespace CheapAsChips.DAL
            var recipe_Ingredients = new List<Recipe_Ingredient>
             {
                 
-                new Recipe_Ingredient{  RecipeID= 1, Recipe_IngredientID = 1},
-                new Recipe_Ingredient{ RecipeID=1, Recipe_IngredientID= 2},
-                new Recipe_Ingredient{ RecipeID=1, Recipe_IngredientID= 3}
+                new Recipe_Ingredient{  RecipeID= 1, IngredientID = 1},
+                new Recipe_Ingredient{ RecipeID=1, IngredientID= 2},
+                new Recipe_Ingredient{ RecipeID=1, IngredientID= 3},
+                new Recipe_Ingredient{  RecipeID= 2, IngredientID = 1},
+                new Recipe_Ingredient{ RecipeID=2, IngredientID= 2}
+               
+
             };
 
            recipe_Ingredients.ForEach(s => context.Recipe_Ingredient.Add(s));

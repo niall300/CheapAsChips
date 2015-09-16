@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CheapAsChips.Models
 {
-    public class Ingredient
+    public class Ingredient : System.Collections.IEnumerable
     {
 
 
@@ -21,8 +21,13 @@ namespace CheapAsChips.Models
         //Navigation Properties
         public virtual ICollection<Recipe_Ingredient> RecipeIngredient { get; set; }
 
-        
 
 
+
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

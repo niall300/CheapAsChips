@@ -47,13 +47,21 @@ namespace CheapAsChips.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "RecipeID,dateAdded,Title,MainIngredient,description,NumberOfServings,Notes,Tip,Blender,Method,MealType,FoodType,Spicy")] Recipe recipe)
+        public ActionResult Create([Bind(Include = "dateAdded,Title,MainIngredient,description,NumberOfServings,Notes,Tip,Blender,Method,MealType,FoodType,Spicy")] Recipe recipe)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Recipe.Add(recipe);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Recipe.Add(recipe);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (DataException /* dex */)
+            {
+                //Log the error (uncomment dex variable name and add a line here to write a log.
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
             }
 
             return View(recipe);
@@ -77,17 +85,44 @@ namespace CheapAsChips.Controllers
         // POST: Recipe/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit([Bind(Include = "RecipeID,dateAdded,Title,MainIngredient,description,NumberOfServings,Notes,Tip,Blender,Method,MealType,FoodType,Spicy")] Recipe recipe)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(recipe).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(recipe);
+        //}
+
+        [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "RecipeID,dateAdded,Title,MainIngredient,description,NumberOfServings,Notes,Tip,Blender,Method,MealType,FoodType,Spicy")] Recipe recipe)
+        public ActionResult EditPost(int? id)
         {
-            if (ModelState.IsValid)
+            if (id == null)
             {
-                db.Entry(recipe).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            return View(recipe);
+            var recipeToUpdate = db.Recipe.Find(id);
+            if (TryUpdateModel(recipeToUpdate, "",
+               new string[] { "Title", "MainIngredient", "description "}))
+            {
+                try
+                {
+                    db.SaveChanges();
+
+                    return RedirectToAction("Index");
+                }
+                catch (DataException /* dex */)
+                {
+                    //Log the error (uncomment dex variable name and add a line here to write a log.
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+                }
+            }
+            return View(recipeToUpdate);
         }
 
         // GET: Recipe/Delete/5

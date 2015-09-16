@@ -13,7 +13,7 @@ namespace CheapAsChips.Models
 
         public int Recipe_IngredientID { get; set; }
         public int RecipeID { get; set; }
-        public int StudentID { get; set; }
+        public int IngredientID { get; set; }
        
         //navigation proerties
         public virtual Ingredient Ingredient { get; set; }

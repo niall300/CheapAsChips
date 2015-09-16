@@ -24,5 +24,7 @@ namespace CheapAsChips.DAL
                 //this line of code prevents the database pluralising table names
                 modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             }
+
+            public System.Data.Entity.DbSet<CheapAsChips.Models.NewRecipe> NewRecipes { get; set; }
         }
  }

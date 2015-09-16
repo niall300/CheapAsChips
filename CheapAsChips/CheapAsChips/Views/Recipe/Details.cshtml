@@ -105,6 +105,32 @@
         <dd>
             @Html.DisplayFor(model => model.Spicy)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Recipe_Ingredients)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Ingredient</th>
+                    <th>Qty</th>
+                    <th>Unit</th>
+                </tr>
+                @foreach (var item in Model.Recipe_Ingredients)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ingredient.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ingredient.Quantity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ingredient.Measure)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
 
     </dl>
 </div>

@@ -173,6 +173,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NewRecipeController.cs" />
     <Compile Include="Controllers\RecipeController.cs" />
     <Compile Include="DAL\RecipeContext.cs" />
     <Compile Include="DAL\RecipeInitializer.cs" />
@@ -184,6 +185,7 @@
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\Instructions.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\NewRecipe.cs" />
     <Compile Include="Models\Recipe.cs" />
     <Compile Include="Models\Recipe_Ingredient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -257,6 +259,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="App_GlobalResources\" />
     <Folder Include="images\" />
+    <Folder Include="Views\NewRecipe\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
