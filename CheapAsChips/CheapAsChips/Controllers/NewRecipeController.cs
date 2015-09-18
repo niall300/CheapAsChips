@@ -8,6 +8,7 @@ namespace CheapAsChips.Controllers
 {
     public class NewRecipeController : Controller
     {
+       
         // GET: NewRecipe
         public ActionResult Index()
         {

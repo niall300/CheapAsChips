@@ -254,12 +254,12 @@
     <Content Include="Views\Recipe\Details.cshtml" />
     <Content Include="Views\Recipe\Edit.cshtml" />
     <Content Include="Views\Recipe\Index.cshtml" />
+    <Content Include="Views\NewRecipe\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="App_GlobalResources\" />
     <Folder Include="images\" />
-    <Folder Include="Views\NewRecipe\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

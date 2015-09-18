@@ -9,6 +9,7 @@ namespace CheapAsChips.Models
 {
     public class NewRecipe
     {
+        
 
         public int NewRecipeID { get; set; }
         public DateTime dateAdded { get; set; }
@@ -33,7 +34,12 @@ namespace CheapAsChips.Models
        // public List<String> MyStrings { get; set; }
 
 
-        public List <Ingredient> Ingredients { get; set; }
+        public List <IEnumerable<Ingredient>> Ingredients { get; set; }
+        //constructor
+         public NewRecipe()
+        {
+            this.Ingredients = new List<IEnumerable<Ingredient>>();
+        }
        
        
         
