@@ -28,6 +28,8 @@ namespace CheapAsChips.Controllers
         }
 
         // POST: NewRecipe/Create
+       //only certain people can add recipes
+        [Authorize(Roles = "Admin, Super User",Users = "Betty, Johnny")]
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {

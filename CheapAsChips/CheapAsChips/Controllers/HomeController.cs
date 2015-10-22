@@ -20,9 +20,24 @@ namespace CheapAsChips.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            //we can pass data to the view using the viewbag
+            //our variable is called theMessage
+            ViewBag.theMessage = "Give us a shout.";
+
+            return View();
+        }
+        [HttpPost]
+        //Note the variable yourmessage must correspond
+        //with the same variable in the view
+        public ActionResult Contact(string yourmessage)
+        {
+            //we can pass data to the view using the viewbag
+            //our variable is called theMessage
+            ViewBag.theMessage = "Your message reads:   " + yourmessage;
+            //TODO process message
 
             return View();
         }
