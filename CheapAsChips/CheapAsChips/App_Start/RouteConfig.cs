@@ -11,13 +11,21 @@ namespace CheapAsChips
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            //these routes are called in order so always put
+            //the most specific first
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(
+               name: "Serial number",
+               url: "serial/{letterCase}",
+               defaults: new { controller = "Home", action = "Serial", letterCase = "upper" }
+           );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+           
         }
     }
 }

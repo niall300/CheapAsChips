@@ -41,5 +41,28 @@ namespace CheapAsChips.Controllers
 
             return View();
         }
+
+        //Below is an example of how we can tell the method to find an alternative view
+        
+        public ActionResult Alternative()
+        {
+            //below we are asking to return the view "contact"
+            return View("Contact");
+        }
+
+        public ActionResult Serial(string letterCase)
+        {
+            var serial = "NIALLCOFFEY";
+            if(letterCase == "lower")
+            {
+                return Content(serial.ToLower());
+            }
+            else if (letterCase == "upper")
+            {
+                return Content(serial.ToUpper());
+            }
+            
+            return Content(serial);
+        }
     }
 }

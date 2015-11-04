@@ -170,11 +170,13 @@ textarea {
 button,
 input {
   line-height: normal;
+  
 }
 
 button,
 select {
   text-transform: none;
+  
 }
 
 button,
@@ -2049,8 +2051,9 @@ fieldset[disabled] .btn {
 }
 
 .btn-default {
-  color: #333333;
-  background-color: #ffffff;
+  /*color: #333333;*/
+  color:red;
+  background-color: #33CCFF;
   border-color: #cccccc;
 }
 
@@ -2100,7 +2103,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-  color: #ffffff;
+  color: #333300;
   background-color: #3276b1;
   border-color: #285e8e;
 }

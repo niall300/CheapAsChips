@@ -119,19 +119,20 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Ingredients, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <div class="checkbox">
+               
+                  
                     
-                   
-                   
-                        @foreach (var item in Model.Ingredients)
-                        {
-                            
+                    @foreach (var item in Model.Ingredients)
+                    {
 
-                            @*@Html.EditorFor(m => m.Ingredients.Name)*@
+                       
+                        @Html.EditorFor(m => m.Ingredients)
 
-                        }
-                        
-                    
+                    }
+
+               
+
+
                 </div>
             </div>
         </div>
@@ -141,7 +142,7 @@
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
-    </div>
+    @*</div>*@
 }
 
 <div>

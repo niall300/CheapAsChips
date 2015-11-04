@@ -37,8 +37,11 @@ namespace CheapAsChips.Controllers
         }
 
         // GET: Recipe/Create
+        [Authorize]
         public ActionResult Create()
         {
+           
+
             return View();
         }
 
@@ -55,6 +58,8 @@ namespace CheapAsChips.Controllers
                 {
                     db.Recipe.Add(recipe);
                     db.SaveChanges();
+                    //TODO change code to display a success view
+                    //containing the recipe added
                     return RedirectToAction("Index");
                 }
             }

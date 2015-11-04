@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CheapAsChips.DAL;
+using CheapAsChips.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,9 +8,13 @@ using System.Web.Mvc;
 
 namespace CheapAsChips.Controllers
 {
+    //this would only allowlogged in users access the class
+    //[Authorize]
     public class NewRecipeController : Controller
     {
-       
+        private RecipeContext db = new RecipeContext();
+
+       //[AllowAnonoymous] would allow this action if the rest of the class was restricted
         // GET: NewRecipe
         public ActionResult Index()
         {
@@ -24,12 +30,13 @@ namespace CheapAsChips.Controllers
         // GET: NewRecipe/Create
         public ActionResult Create()
         {
-            return View();
+           NewRecipe myNewRecipe = new NewRecipe();
+            return View(myNewRecipe);
         }
 
         // POST: NewRecipe/Create
        //only certain people can add recipes
-        [Authorize(Roles = "Admin, Super User",Users = "Betty, Johnny")]
+        //[Authorize(Roles = "Admin, Super User",Users = "Betty, Johnny")]
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -46,6 +53,7 @@ namespace CheapAsChips.Controllers
         }
 
         // GET: NewRecipe/Edit/5
+        [Authorize]//allows any logged in user
         public ActionResult Edit(int id)
         {
             return View();
