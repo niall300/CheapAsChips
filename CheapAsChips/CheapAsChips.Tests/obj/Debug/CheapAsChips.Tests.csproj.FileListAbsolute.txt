@@ -1,3 +1,4 @@
+C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\obj\Debug\CheapAsChips.Tests.csprojResolveAssemblyReference.cache
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\CheapAsChips.Tests.dll.config
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\CheapAsChips.Tests.dll
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\CheapAsChips.Tests.pdb
@@ -45,6 +46,5 @@ C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\Microsoft.O
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\System.Web.Http.WebHost.xml
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\bin\Debug\System.Net.Http.Formatting.xml
-C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\obj\Debug\CheapAsChips.Tests.csprojResolveAssemblyReference.cache
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\obj\Debug\CheapAsChips.Tests.dll
 C:\ITT\github\CheapAsChips\CheapAsChips\CheapAsChips.Tests\obj\Debug\CheapAsChips.Tests.pdb

@@ -1,5 +1,4 @@
-﻿using CheapAsChips.DAL;
-using CheapAsChips.Models;
+﻿using CheapAsChips.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,35 +7,27 @@ using System.Web.Mvc;
 
 namespace CheapAsChips.Controllers
 {
-    //this would only allowlogged in users access the class
-    //[Authorize]
-    public class NewRecipeController : Controller
+    public class IngredientViewController : Controller
     {
-        private RecipeContext db = new RecipeContext();
-
-       //[AllowAnonoymous] would allow this action if the rest of the class was restricted
-        // GET: NewRecipe
+        // GET: IngredientView
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: NewRecipe/Details/5
+        // GET: IngredientView/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: NewRecipe/Create
+        // GET: IngredientView/Create
         public ActionResult Create()
         {
-           NewRecipe myNewRecipe = new NewRecipe();
-            return View(myNewRecipe);
+            return View();
         }
 
-        // POST: NewRecipe/Create
-       //only certain people can add recipes
-        //[Authorize(Roles = "Admin, Super User",Users = "Betty, Johnny")]
+        // POST: IngredientView/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -52,14 +43,13 @@ namespace CheapAsChips.Controllers
             }
         }
 
-        // GET: NewRecipe/Edit/5
-        [Authorize]//allows any logged in user
+        // GET: IngredientView/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: NewRecipe/Edit/5
+        // POST: IngredientView/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -75,13 +65,13 @@ namespace CheapAsChips.Controllers
             }
         }
 
-        // GET: NewRecipe/Delete/5
+        // GET: IngredientView/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: NewRecipe/Delete/5
+        // POST: IngredientView/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
@@ -96,5 +86,25 @@ namespace CheapAsChips.Controllers
                 return View();
             }
         }
+
+        //method to add ingreients to ingredient list
+        [HttpPost]
+        public ActionResult Add(IngredientViewModel viewModel)
+        {
+            try
+            {
+                viewModel.IngredientsList.Add(viewModel.Ingredient);
+                return PartialView("_AddIngredients");
+            }
+            catch
+            {
+                return View();
+            }
+
+        }
+       
+
+        }
+
     }
-}
+

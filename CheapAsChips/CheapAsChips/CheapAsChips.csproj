@@ -172,22 +172,25 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IngredientViewController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\NewRecipeController.cs" />
     <Compile Include="Controllers\RecipeController.cs" />
+    <Compile Include="Controllers\Recipe_IngredientViewModelController.cs" />
     <Compile Include="DAL\RecipeContext.cs" />
     <Compile Include="DAL\RecipeInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IngredientViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\Instructions.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\NewRecipe.cs" />
     <Compile Include="Models\Recipe.cs" />
     <Compile Include="Models\Recipe_Ingredient.cs" />
+    <Compile Include="Models\Recipe_IngredientViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -249,17 +252,25 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Recipe\Create.cshtml" />
     <Content Include="Views\Recipe\Delete.cshtml" />
     <Content Include="Views\Recipe\Details.cshtml" />
     <Content Include="Views\Recipe\Edit.cshtml" />
     <Content Include="Views\Recipe\Index.cshtml" />
-    <Content Include="Views\NewRecipe\Create.cshtml" />
+    <Content Include="Views\View.cshtml" />
+    <Content Include="Views\Shared\_AddIngredientsOld.cshtml" />
+    <Content Include="Views\Shared\_AddRecipe_ingredients.cshtml" />
+    <Content Include="Views\Recipe\Create.cshtml" />
+    <Content Include="Views\Recipe_IngredientViewModel\_Add.cshtml" />
+    <Content Include="Views\Recipe_IngredientViewModel\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="App_GlobalResources\" />
     <Folder Include="images\" />
+    <Folder Include="Views\Ingredients\" />
+    <Folder Include="Views\IngredientView\" />
+    <Folder Include="Views\Ingredient\" />
+    <Folder Include="Views\Recipe_Ingredient\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

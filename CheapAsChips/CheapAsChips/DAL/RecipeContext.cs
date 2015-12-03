@@ -25,6 +25,10 @@ namespace CheapAsChips.DAL
                 modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             }
 
-            public System.Data.Entity.DbSet<CheapAsChips.Models.NewRecipe> NewRecipes { get; set; }
+            //public System.Data.Entity.DbSet<CheapAsChips.Models.Recipe> Recipes { get; set; }
+
+            public System.Data.Entity.DbSet<CheapAsChips.Models.IngredientViewModel> IngredientViewModels { get; set; }
+
+            public System.Data.Entity.DbSet<CheapAsChips.Models.Recipe_IngredientViewModel> Recipe_IngredientViewModel { get; set; }
         }
  }

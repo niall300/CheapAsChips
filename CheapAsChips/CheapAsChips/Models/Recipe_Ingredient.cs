@@ -8,7 +8,7 @@ namespace CheapAsChips.Models
     //this class allows us to maintain
     //a many to many relationship between recipe and ingredient
     //this is an association class or table
-    public class Recipe_Ingredient
+    public class Recipe_Ingredient : IEnumerable<Recipe_Ingredient>
     {
 
         public int Recipe_IngredientID { get; set; }
@@ -18,5 +18,15 @@ namespace CheapAsChips.Models
         //navigation proerties
         public virtual Ingredient Ingredient { get; set; }
         public virtual Recipe Recipe { get; set; }
+
+        public IEnumerator<Recipe_Ingredient> GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -14,6 +14,7 @@ namespace CheapAsChips.Models
 
         // this attribute lets you enter the primary key for the course rather than having the database generate it?
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int RecipeID { get; set; }
         public int IngredientID { get; set; }
         public String Name { get; set; }
         public String Measure { get; set; }
@@ -31,6 +32,10 @@ namespace CheapAsChips.Models
                 yield return i;
             }
 
+        }
+        public override string ToString()
+        {
+            return Quantity + " " + Measure + " " + "  " + Name;
         }
 
 

@@ -1,0 +1,45 @@
+﻿@model CheapAsChips.Models.IngredientViewModel
+
+@using (Html.BeginForm("IngredientsView", "Add", FormMethod.Post, 
+                                      new { enctype = "multipart/form-data" }))
+{
+   
+    
+    <div class="form-horizontal">
+        <h4>Add Ingredients</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ingredient.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+
+                @Html.EditorFor(model => model.Ingredient.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Ingredient.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ingredient.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+
+                @Html.EditorFor(model => model.Ingredient.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Ingredient.Quantity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ingredient.Measure, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+
+                @Html.EditorFor(model => model.Ingredient.Measure, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Ingredient.Measure, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    
+    <input type="submit" value="Add" style="width: 70px; font-size: 12px" />
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

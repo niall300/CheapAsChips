@@ -13,6 +13,8 @@ namespace CheapAsChips.Controllers
 {
     public class RecipeController : Controller
     {
+
+        //testing 123
         private RecipeContext db = new RecipeContext();
 
         // GET: Recipe
@@ -37,7 +39,7 @@ namespace CheapAsChips.Controllers
         }
 
         // GET: Recipe/Create
-        [Authorize]
+        //[Authorize]
         public ActionResult Create()
         {
            
@@ -60,13 +62,13 @@ namespace CheapAsChips.Controllers
                     db.SaveChanges();
                     //TODO change code to display a success view
                     //containing the recipe added
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Details", recipe.RecipeID);
                 }
             }
             catch (DataException /* dex */)
             {
                 //Log the error (uncomment dex variable name and add a line here to write a log.
-                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see call Niall.");
             }
 
             return View(recipe);
