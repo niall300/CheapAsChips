@@ -7,7 +7,7 @@
 
     <ul class="nav navbar-nav navbar-right">
         <li>
-            @Html.ActionLink("Welcome Back " + User.Identity.GetUserName()   + "for more cooking!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            @Html.ActionLink("Welcome Back "  + User.Identity.GetUserName()   + " for more cooking!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
     </ul>
@@ -15,8 +15,19 @@
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
+    @*<ul class="nav navbar-nav navbar-right">*@
+        <div class="navbar-right">
+            <p><a class="btn btn-default" href="http://localhost:55295/Account/Login">Login <span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+       <a class="btn btn-default" href="http://localhost:55295/Account/Register">Register <span class="glyphicon glyphicon-circle-arrow-right"></span></a></p>
+        
+            <div class="projectTitle">
+               <h3> Cheap As Chips</h3>
+            </div>
+            
+
+
+            @*<button type="button" class="btn btn-default">@Html.ActionLink("Register", "Account", "Register")</button>*@
+          
+        </div>
+       
 }

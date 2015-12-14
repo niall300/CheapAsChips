@@ -19,8 +19,11 @@ namespace CheapAsChips.Models
         [Key]
         public int RecipeID { get; set; }
 
+       
+
+
         //this tells the view how to display the data
-         [DataType(DataType.Date)]
+        [DataType(DataType.Date)]
          [Display(Name = "Uploaded on: ")]
         public DateTime dateAdded { get; set; }
 
@@ -32,6 +35,7 @@ namespace CheapAsChips.Models
          [Required]
          [StringLength(30, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 2)]
         [Display(Name = "Main Ingredient: ")]
+        [RegularExpression("^[a-zA-Z ]*$")]
         public string MainIngredient { get; set; }
 
         [Required]
@@ -77,13 +81,14 @@ namespace CheapAsChips.Models
         //public CookingTime Time { get; set; }
 
         //Navigation Properties
-         [Display(Name = "Ingredients: ")]
-        public virtual ICollection<Recipe_Ingredient> Recipe_Ingredients { get; set; }
+        public virtual ICollection<Ingredient> ingreds { get; set; }
+        // [Display(Name = "Ingredients: ")]
+        //public virtual ICollection<Recipe_Ingredient> Recipe_Ingredients { get; set; }
 
          public Recipe()
         {
             dateAdded = DateTime.UtcNow;
-            Recipe_Ingredients = new Collection<Recipe_Ingredient>();
+            ingreds = new Collection<Ingredient>();
         }
 
     }

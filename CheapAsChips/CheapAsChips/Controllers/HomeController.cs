@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using CheapAsChips.DAL;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CheapAsChips.Models;
 
 namespace CheapAsChips.Controllers
 {
     public class HomeController : Controller
     {
+        private RecipeContext db = new RecipeContext();
         public ActionResult Index()
         {
             return View();
@@ -15,7 +18,7 @@ namespace CheapAsChips.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "About me";
 
             return View();
         }
@@ -32,11 +35,12 @@ namespace CheapAsChips.Controllers
         [HttpPost]
         //Note the variable yourmessage must correspond
         //with the same variable in the view
-        public ActionResult Contact(string yourmessage)
+        public ActionResult Contact(string myMessage)
         {
+
             //we can pass data to the view using the viewbag
             //our variable is called theMessage
-            ViewBag.theMessage = "Your message reads:   " + yourmessage;
+            ViewBag.theMessage = "Your Message reads:   " + myMessage;
             //TODO process message
 
             return View();
@@ -49,6 +53,8 @@ namespace CheapAsChips.Controllers
             //below we are asking to return the view "contact"
             return View("Contact");
         }
+
+       
 
         public ActionResult Serial(string letterCase)
         {

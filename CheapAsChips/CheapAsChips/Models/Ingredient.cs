@@ -7,7 +7,7 @@ using System.Collections;
 
 namespace CheapAsChips.Models
 {
-    public class Ingredient : IEnumerable
+    public class Ingredient 
     {
 
 
@@ -21,18 +21,9 @@ namespace CheapAsChips.Models
         public Double Quantity { get; set; }
 
         //Navigation Properties
-        public virtual List<Recipe_Ingredient> RecipeIngredient { get; set; }
+        
 
-        public IEnumerator GetEnumerator()
-        {
-            RecipeIngredient = new List<Recipe_Ingredient>();
-
-            foreach (Recipe_Ingredient i in RecipeIngredient)
-            {
-                yield return i;
-            }
-
-        }
+       
         public override string ToString()
         {
             return Quantity + " " + Measure + " " + "  " + Name;

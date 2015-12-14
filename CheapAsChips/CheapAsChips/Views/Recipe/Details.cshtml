@@ -106,7 +106,7 @@
             @Html.DisplayFor(model => model.Spicy)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Recipe_Ingredients)
+            @Html.DisplayNameFor(item => item.ingreds)
         </dt>
         <dd>
             <table class="table">
@@ -115,17 +115,17 @@
                     <th>Qty</th>
                     <th>Unit</th>
                 </tr>
-                @foreach (var item in Model.Recipe_Ingredients)
+                @foreach (var item in Model.ingreds)
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Ingredient.Name)
+                            @Html.DisplayFor(modelItem => item.Name  )
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Ingredient.Quantity)
+                            @Html.DisplayFor(modelItem => item.Quantity)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Ingredient.Measure)
+                            @Html.DisplayFor(modelItem => item.Measure)
                         </td>
                     </tr>
                 }
@@ -135,6 +135,7 @@
     </dl>
 </div>
 <p>
+    @* creates an anonymous object letting us pass the recipeId *@
     @Html.ActionLink("Edit", "Edit", new { id = Model.RecipeID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

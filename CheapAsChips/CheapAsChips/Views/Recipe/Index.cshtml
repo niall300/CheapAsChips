@@ -11,9 +11,7 @@
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.dateAdded)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.Title)
         </th>
@@ -23,15 +21,9 @@
         <th>
             @Html.DisplayNameFor(model => model.description)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumberOfServings)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Notes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tip)
-        </th>
+       
+       
+       
         <th>
             @Html.DisplayNameFor(model => model.Blender)
         </th>
@@ -52,9 +44,7 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.dateAdded)
-        </td>
+      
         <td>
             @Html.DisplayFor(modelItem => item.Title)
         </td>
@@ -64,15 +54,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.description)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumberOfServings)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Notes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tip)
-        </td>
+       
+      
+       
         <td>
             @Html.DisplayFor(modelItem => item.Blender)
         </td>

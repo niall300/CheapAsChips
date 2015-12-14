@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using CheapAsChips.DAL;
 using CheapAsChips.Models;
+using System.IO;
 
 namespace CheapAsChips.Controllers
 {
@@ -16,6 +17,8 @@ namespace CheapAsChips.Controllers
 
         //testing 123
         private RecipeContext db = new RecipeContext();
+
+        List<Ingredient> myIngredients = new List<Ingredient>();
 
         // GET: Recipe
         public ActionResult Index()
@@ -60,9 +63,8 @@ namespace CheapAsChips.Controllers
                 {
                     db.Recipe.Add(recipe);
                     db.SaveChanges();
-                    //TODO change code to display a success view
-                    //containing the recipe added
-                    return RedirectToAction("Details", recipe.RecipeID);
+                    //add recipe and call the FileUpload controller
+                    return RedirectToAction("FileUpload", recipe);
                 }
             }
             catch (DataException /* dex */)
@@ -72,6 +74,171 @@ namespace CheapAsChips.Controllers
             }
 
             return View(recipe);
+        }
+
+        [HttpGet]
+        public ActionResult Search()
+        {
+            return View();
+
+        }
+
+        [HttpPost]
+        public ActionResult Search(Recipe rcp)
+        {
+            var recipes = from r in db.Recipe
+                          select r;
+            //TODO add logic to search by main ingredient
+            if (rcp.MainIngredient != null)
+            {
+
+                recipes = db.Recipe.Where(s => s.MainIngredient.Contains(rcp.MainIngredient));
+                //create a list of recipes and pass to displayresults
+                List<Recipe> recipeList = new List<Recipe>();
+                recipeList = recipes.ToList();
+                //Recipe rec = new Recipe();
+                //rec.MainIngredient = "cheese";
+                //recipeList.Add(rec);
+
+                return View("DisplayResults", recipeList);
+
+            }
+
+            return View("Index");
+        }
+
+        public ActionResult DisplayResults(List<Recipe> recipeList)
+        {
+
+            //check that list is not null
+            if (recipeList != null)
+            {
+                return View(recipeList);
+            }
+            return View("NoResults");
+        }
+        public ActionResult NoResults()
+        {
+            return View();
+        }
+
+        //Upload Image
+        [HttpGet]
+        public ActionResult FileUpload(Recipe recipe)
+        {
+
+
+            return View(recipe);
+        }
+        public ActionResult FileUpload(HttpPostedFileBase file, Recipe recipe)
+        {
+            if (file != null)
+            {
+                string pic = System.IO.Path.GetFileName(file.FileName);
+                string path = System.IO.Path.Combine(
+                                       Server.MapPath("~/images/profile"), pic);
+                //file is uploaded
+                file.SaveAs(path);
+
+                // save the image path path to the database or you can send image
+                // directly to database
+                // in-case if you want to store byte[] ie. for DB
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    file.InputStream.CopyTo(ms);
+                    //here we create a byte array from our photo
+                    byte[] myImage = ms.GetBuffer();
+
+                    Image image = new Image();
+                    image.RecipeID = recipe.RecipeID;
+                    image.imagedata = myImage;
+                    db.Image.Add(image);
+                    //save changes
+                    db.SaveChanges();
+
+                }
+
+            }
+            // after successfully uploading redirect the user
+            //to add ingredients
+           //recipe.RecipeID;
+
+            return RedirectToAction("AddIngredients", recipe);
+        }
+
+        //add ingredients
+        //this method is called initially by the create controller
+        //not below is the second get method that takes an ingredient
+        //and is redirected from the addIngredients post controller
+        //[HttpGet]
+        //public ActionResult AddIngredients(Recipe recipe)
+        //{
+        //    //create new ingredient
+        //    Ingredient ing = new Ingredient();
+        //    //assign recipe id
+        //    ing.RecipeID = recipe.RecipeID;
+            
+
+        //    //display list of ingredients
+        //    //TODO
+        //    //Add Finish button to redirect to add instructions controller action
+            
+           
+        //    ViewBag.theMessage = "Add your ingredients.";
+                      
+        //    return View(ing);
+        //}
+        [HttpGet]
+        public ActionResult AddIngredients(Recipe recipe)
+        {
+            //create new ingredient
+             Ingredient newIng = new Ingredient();
+            //assign id from previous ingredient
+            newIng.RecipeID = recipe.RecipeID;
+
+
+            //display list of ingredients
+            //TODO
+            //Add Finish button to redirect to add instructions controller action
+            ViewBag.theMessage = "Add your ingredients.";
+
+            return View(newIng);
+        }
+
+
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddIngredients(Ingredient ing)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    //add ingredient
+                    db.Ingredients.Add(ing);
+                    db.SaveChanges();
+                    //add ingredient to list
+                    myIngredients.Add(ing);
+
+                    //return to add ingredients view
+                    return RedirectToAction("AddIngredients", ing.RecipeID);
+                }
+            }
+            catch (DataException /* dex */)
+            {
+                //Log the error (uncomment dex variable name and add a line here to write a log.
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see call Niall.");
+            }
+
+            return View(ing);
+        }
+
+        //Add Instructions
+        public ActionResult AddInstructions()
+        {
+            return View();
         }
 
         // GET: Recipe/Edit/5

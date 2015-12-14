@@ -35,11 +35,15 @@ namespace CheapAsChips.DAL
             //do the same for ingredients table
             var ingredients = new List<Ingredient>
             {
-                new Ingredient{   Measure = "piece", Name = "Sliced Bread", Quantity = 2 },
-                new Ingredient{   Measure = "grams", Name = "Cheddar Cheese", Quantity = 200 },
-                new Ingredient{   Measure = "grams", Name = "Butter", Quantity = 30 }
+                new Ingredient{    RecipeID= 1, IngredientID = 1, Measure = "piece", Name = "Sliced Bread", Quantity = 2 },
+                new Ingredient{   RecipeID= 1, IngredientID = 2, Measure = "grams", Name = "Cheddar Cheese", Quantity = 200 },
+                new Ingredient{   RecipeID= 1, IngredientID = 3, Measure = "grams", Name = "Butter", Quantity = 30 },
 
-           
+                new Ingredient{    RecipeID= 2, IngredientID = 3, Measure = "piece", Name = "Sliced Bread", Quantity = 2 },
+                new Ingredient{   RecipeID= 2, IngredientID = 4, Measure = "slices", Name = "Ham", Quantity = 2 },
+                new Ingredient{   RecipeID= 2, IngredientID = 5, Measure = "grams", Name = "Butter", Quantity = 30 }
+
+
             };
 
             ingredients.ForEach(s => context.Ingredients.Add(s));
@@ -48,20 +52,20 @@ namespace CheapAsChips.DAL
 
             //***here we add our association table data. This allows us to connect
             //recipe ID=1 (cheese sandwich) with its relevant ingredients
-           var recipe_Ingredients = new List<Recipe_Ingredient>
-            {
+           //var recipe_Ingredients = new List<Recipe_Ingredient>
+           // {
                 
-                new Recipe_Ingredient{  RecipeID= 1, IngredientID = 1},
-                new Recipe_Ingredient{ RecipeID=1, IngredientID= 2},
-                new Recipe_Ingredient{ RecipeID=1, IngredientID= 3},
-                new Recipe_Ingredient{  RecipeID= 2, IngredientID = 1},
-                new Recipe_Ingredient{ RecipeID=2, IngredientID= 2}
+           //     new Recipe_Ingredient{  RecipeID= 1, IngredientID = 1},
+           //     new Recipe_Ingredient{ RecipeID=1, IngredientID= 2},
+           //     new Recipe_Ingredient{ RecipeID=1, IngredientID= 3},
+           //     new Recipe_Ingredient{  RecipeID= 2, IngredientID = 1},
+           //     new Recipe_Ingredient{ RecipeID=2, IngredientID= 2}
                
 
-            };
+           // };
 
-           recipe_Ingredients.ForEach(s => context.Recipe_Ingredient.Add(s));
-           context.SaveChanges();
+           //recipe_Ingredients.ForEach(s => context.Recipe_Ingredient.Add(s));
+           //context.SaveChanges();
         }
     }
 }

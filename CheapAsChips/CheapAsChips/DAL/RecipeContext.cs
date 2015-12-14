@@ -16,10 +16,13 @@ namespace CheapAsChips.DAL
         }
 
             public DbSet<Recipe> Recipe { get; set; }
-            public DbSet<Recipe_Ingredient> Recipe_Ingredient { get; set; }
-            public DbSet<Ingredient> Ingredients { get; set; }
+            public DbSet<Image> Image { get; set; }
+            public DbSet<Instructions> Instructions { get; set; }
 
-            protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        
+        public DbSet<Ingredient> Ingredients { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
             {
                 //this line of code prevents the database pluralising table names
                 modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
@@ -27,8 +30,6 @@ namespace CheapAsChips.DAL
 
             //public System.Data.Entity.DbSet<CheapAsChips.Models.Recipe> Recipes { get; set; }
 
-            public System.Data.Entity.DbSet<CheapAsChips.Models.IngredientViewModel> IngredientViewModels { get; set; }
-
-            public System.Data.Entity.DbSet<CheapAsChips.Models.Recipe_IngredientViewModel> Recipe_IngredientViewModel { get; set; }
-        }
+           
+    }
  }

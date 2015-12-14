@@ -9,40 +9,51 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @* the action link below ("name displayed", Action, Controller) *@
-                @Html.ActionLink("Cheap As Chips", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Search", "Index", "Search")</li>
-                    <li>@Html.ActionLink("Main Course", "Index", "Main Course")</li>
-                    <li>@Html.ActionLink("Recipes", "Index", "Recipe")</li>
-                 </ul>
-                @Html.Partial("_LoginPartial")
+   
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="col-md-offset-1 col-md-10">
+
+                        <img id="logo" alt="Logo" src="@Url.Content("~/Website/logosmall.png")" />
+
+                    </div>
+                    @* the action link below ("name displayed", Action, Controller) *@
+                    @*@Html.ActionLink("Cheap As Chips", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                </div>
+
+                <div class="navbar-collapse collapse">
+                    @*<div class="navbar-buttons">*@
+                    <a class="btn btn-default" href="http://localhost:55295/Home/Index">Home</a>
+                    <a class="btn btn-default" href="http://localhost:55295/Recipe/Index">Recipes</a>
+                    <a class="btn btn-default" href="http://localhost:55295/Recipe/Search">Search</a>
+                    <a class="btn btn-default" href="http://localhost:55295/Recipe/Create">Create</a>
+
+                    <a class="btn btn-default" href="http://localhost:55295/Home/Contact">Contact Me</a>
+                    <a class="btn btn-default" href="http://localhost:55295/Home/About">About</a>
+                    
+
+                       
+                        @Html.Partial("_LoginPartial")
+</div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Cheap As Chips</p>
-        </footer>
-    </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Cheap As Chips</p>
+                <p> you are using the @Request.Browser.Browser browser; @*@Html.Action("Serial", "Home", new { letterCase = "lower" })*@</p>
+            </footer>
+        </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
 </html>

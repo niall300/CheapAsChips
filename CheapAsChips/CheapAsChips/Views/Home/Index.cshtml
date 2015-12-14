@@ -13,23 +13,24 @@
             Here is a collection of cheap, nutritious and easy to prepare meals 
             for those of us on a budget. most recipes cost less than a fiver
         </p>
-        <p><a class="btn btn-default" href="/Account/Login">Log In &raquo;</a></p>
-        <p><a class="btn btn-default" href="/Account/Register">Register &raquo;</a></p>
+       
        
     </div>
     <div class="col-md-4">
         <h2>Search by ingredient</h2>
         <p>Do you have something in the cupboard you want to use, Over 20 recipes!!</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866" >Search Now <span class="glyphicon glyphicon-circle-arrow-right"></span></a></p>
+        <p><a class="btn btn-default" href="http://localhost:55295/Recipe/Search">Search <span class="glyphicon glyphicon-circle-arrow-right"></span></a></p>
     </div>
 
     <div class="col-md-4">
         <h2>Add recipes</h2>
         <p>You can easily add your own favourite recipes</p>
-        <p><a class="btn btn-default" href="http://localhost:55295/Recipe/Create">Post Now &raquo;</a></p>
+        <p><a class="btn btn-default" href="http://localhost:55295/Recipe/Create">Post Now <span class="glyphicon glyphicon-circle-arrow-right"></span></a></p>
     </div>
     @* html action is calling the serial action in the home controller
         we create an anonymous object to allow us to pass in the parameters
+        
      *@
-    you are using @Request.Browser.Browser; @Html.Action("Serial", "Home", new {letterCase="lower"} )
+    @*@Html.Action("actionName","controllerName", new {@class = valueToPass});*@
+
 </div>
