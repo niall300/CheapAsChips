@@ -8,9 +8,9 @@ namespace CheapAsChips.Models
 {
     public class Instructions
     {
-        [Key]
-        public int InstructionId { get; set; }
-        public int RecipeId { get; set; }
-                public string[] Steps { get; set; }
+        [Primary Key]
+        public int InstructionID { get; set; }
+        public int RecipeID { get; set; }
+        public string myInstruction { get; set; }
     }
 }

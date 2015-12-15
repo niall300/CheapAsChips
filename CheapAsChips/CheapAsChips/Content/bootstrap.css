@@ -319,7 +319,7 @@ body {
   
   line-height: 1.428571429;
   /*color: #333333;*/
-/*Font Colour for body text*/
+  /*Font Colour for body text*/
    color: black;
 
   /*background-colour: #ffffff;*/
@@ -342,7 +342,7 @@ textarea {
 button,
 input,
 select[multiple],
-textarea {
+textarea{
   background-image: none;
 }
 

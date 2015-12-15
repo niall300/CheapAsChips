@@ -34,12 +34,32 @@ namespace CheapAsChips.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Recipe recipe = db.Recipe.Find(id);
+            
             if (recipe == null)
             {
                 return HttpNotFound();
             }
             return View(recipe);
         }
+        //render photo from byte array
+        public System.Drawing.Image RenderPhoto(int RecipeID)
+        {
+            //get image data
+            RecipeImage image = db.Image.Find(RecipeID);
+            //add to byte array
+            Byte[] imageArray = image.imagedata;
+            //convert to string
+            string myImagestring = Convert.ToBase64String(imageArray);
+
+            using (var ms = new MemoryStream(imageArray, 0, imageArray.Length))
+            {
+                System.Drawing.Image myimage = System.Drawing.Image.FromStream(ms, true);
+                return myimage;
+            }
+
+
+        }
+        
 
         // GET: Recipe/Create
         //[Authorize]
@@ -149,7 +169,7 @@ namespace CheapAsChips.Controllers
                     //here we create a byte array from our photo
                     byte[] myImage = ms.GetBuffer();
 
-                    Image image = new Image();
+                    RecipeImage image = new RecipeImage();
                     image.RecipeID = recipe.RecipeID;
                     image.imagedata = myImage;
                     db.Image.Add(image);
@@ -189,12 +209,190 @@ namespace CheapAsChips.Controllers
         //    return View(ing);
         //}
         [HttpGet]
-        public ActionResult AddIngredients(Recipe recipe)
+        //not getting the rceipeid
+        public ActionResult AddIngredients(Ingredient ing)
         {
             //create new ingredient
              Ingredient newIng = new Ingredient();
             //assign id from previous ingredient
-            newIng.RecipeID = recipe.RecipeID;
+            newIng.RecipeID = ing.RecipeID;
+           
+
+
+
+            //display list of ingredients
+            //TODO
+            //Add Finish button to redirect to add instructions controller action
+            ViewBag.theMessage = "Add your ingredients.";
+            //recipe id persists to here
+            return View(newIng);
+        }
+
+
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ActionName("AddIngredients")]
+        public ActionResult AddIngredientspost(Ingredient ing)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    //add ingredient
+
+                    db.Ingredients.Add(ing);
+                    db.SaveChanges();
+                    //add ingredient to list
+                    myIngredients.Add(ing);
+                    //when finshed is called iterate over list and add to database
+
+                    //return to add ingredients view
+                    //recipeid persists first time to here
+                    int recipeid = ing.RecipeID;
+                    return RedirectToAction("AddIngredients",ing);
+                }
+            }
+            catch (DataException /* dex */)
+            {
+                //Log the error (uncomment dex variable name and add a line here to write a log.
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists call Niall.");
+            }
+
+            return View(ing);
+        }
+
+        [HttpGet]
+        //not recieving the recipeId
+        public ActionResult AddInstructions(Instructions ins)
+        {
+
+            //create new ingredient
+            ins.RecipeID = ViewBag.id;
+            Instructions newIns = new Instructions();
+            //assign id from previous instruction
+            newIns.RecipeID = ins.RecipeID;
+            
+            //Add Finish button to redirect to add instructions controller action
+            ViewBag.theMessage = "Add your instructions.";
+            //recipe id persists to here
+            ;
+           
+            return View(newIns);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ActionName("AddInstructions")]
+        public ActionResult AddInstructionsPost(Instructions ins)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    //add ingredient
+
+                    db.Instructions.Add(ins);
+                    db.SaveChanges();
+                    //add ingredient to list
+                    //myIngredients.Add(ins);
+                    //when finshed is called iterate over list and add to database
+
+                    //return to add ingredients view
+                    //recipeid persists first time to here
+                    int recipeid = ins.RecipeID;
+                    return RedirectToAction("AddIngredients", ins);
+                }
+            }
+            catch (DataException /* dex */)
+            {
+                //Log the error (uncomment dex variable name and add a line here to write a log.
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists call Niall.");
+            }
+
+            return View(ins);
+        }
+        public ActionResult AddToDatabse()
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    //add ingredients to databse
+                    foreach (Ingredient i in myIngredients)
+                    {
+
+                        db.Ingredients.Add(i);
+                        db.SaveChanges();
+                    }
+                    
+                    
+                   
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (DataException /* dex */)
+            {
+                //Log the error (uncomment dex variable name and add a line here to write a log.
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see call Niall.");
+            }
+            //code to add contents of our ingredient list to the database
+           
+
+            return View("index");
+        }
+        [HttpGet]
+        public ActionResult AddMoreIngredients(int recipeid)
+        {
+            //create new ingredient
+            Ingredient newIng = new Ingredient();
+            //assign id from previous ingredient
+            newIng.RecipeID = recipeid;
+            //add ingredient to database
+           
+
+            
+            //display list of ingredients
+            //TODO
+            //Add Finish button to redirect to add instructions controller action
+            ViewBag.theMessage = "Add your ingredients.";
+            
+
+            return View(newIng);
+        }
+
+        [HttpPost]
+        public ActionResult AddMoreIngredients(Ingredient ing)
+        {
+            //create new ingredient
+            Ingredient newIng = new Ingredient();
+            //assign id from previous ingredient
+            newIng.RecipeID = ing.RecipeID;
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    //add ingredient
+
+                    //db.Ingredients.Add(newIng);
+                    //db.SaveChanges();
+                    //add ingredient to list
+                    myIngredients.Add(newIng);
+                    int recipeid = newIng.RecipeID;
+
+                    //return to add ingredients view
+                    //recipeid persists first time to here
+                    return RedirectToAction("AddMoreIngredients", recipeid);
+                }
+            }
+            catch (DataException /* dex */)
+            {
+                //Log the error (uncomment dex variable name and add a line here to write a log.
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see call Niall.");
+            }
+
+
 
 
             //display list of ingredients
@@ -204,37 +402,6 @@ namespace CheapAsChips.Controllers
 
             return View(newIng);
         }
-
-
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult AddIngredients(Ingredient ing)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    //add ingredient
-                    db.Ingredients.Add(ing);
-                    db.SaveChanges();
-                    //add ingredient to list
-                    myIngredients.Add(ing);
-
-                    //return to add ingredients view
-                    return RedirectToAction("AddIngredients", ing.RecipeID);
-                }
-            }
-            catch (DataException /* dex */)
-            {
-                //Log the error (uncomment dex variable name and add a line here to write a log.
-                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see call Niall.");
-            }
-
-            return View(ing);
-        }
-
         //Add Instructions
         public ActionResult AddInstructions()
         {

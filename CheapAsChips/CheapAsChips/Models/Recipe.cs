@@ -16,7 +16,7 @@ namespace CheapAsChips.Models
     {
 
 
-        [Key]
+        [Primary Key]
         public int RecipeID { get; set; }
 
        
@@ -81,14 +81,19 @@ namespace CheapAsChips.Models
         //public CookingTime Time { get; set; }
 
         //Navigation Properties
+        [Display(Name = "Ingredients: ")]
         public virtual ICollection<Ingredient> ingreds { get; set; }
+        [Display(Name = "Instructions: ")]
+        public virtual ICollection<Instructions> instructions { get; set; }
+        public virtual RecipeImage picture { get; set; }
         // [Display(Name = "Ingredients: ")]
         //public virtual ICollection<Recipe_Ingredient> Recipe_Ingredients { get; set; }
 
-         public Recipe()
+        public Recipe()
         {
             dateAdded = DateTime.UtcNow;
             ingreds = new Collection<Ingredient>();
+            instructions = new Collection<Instructions>();
         }
 
     }

@@ -16,7 +16,7 @@ namespace CheapAsChips.DAL
         }
 
             public DbSet<Recipe> Recipe { get; set; }
-            public DbSet<Image> Image { get; set; }
+            public DbSet<RecipeImage> Image { get; set; }
             public DbSet<Instructions> Instructions { get; set; }
 
         

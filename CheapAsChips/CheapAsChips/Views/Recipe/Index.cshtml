@@ -11,7 +11,9 @@
 </p>
 <table class="table">
     <tr>
-       
+        <th>
+            @Html.DisplayNameFor(model => model.RecipeID)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Title)
         </th>
@@ -46,6 +48,9 @@
     <tr>
       
         <td>
+            @Html.DisplayFor(modelItem => item.RecipeID)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
@@ -56,6 +61,7 @@
         </td>
        
       
+        
        
         <td>
             @Html.DisplayFor(modelItem => item.Blender)

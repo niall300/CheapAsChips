@@ -117,8 +117,8 @@ D:\github\CheapAScHIPS\CheapAsChips\CheapAsChips\bin\Microsoft.Owin.Security.OAu
 D:\github\CheapAScHIPS\CheapAsChips\CheapAsChips\bin\Microsoft.Owin.Security.Google.xml
 D:\github\CheapAScHIPS\CheapAsChips\CheapAsChips\bin\Microsoft.Owin.Security.Twitter.xml
 D:\github\CheapAScHIPS\CheapAsChips\CheapAsChips\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\github\CheapAScHIPS\CheapAsChips\CheapAsChips\obj\Debug\CheapAsChips.Migrations.init.resources
+D:\github\CheapAScHIPS\CheapAsChips\CheapAsChips\obj\Debug\CheapAsChips.csproj.GenerateResource.Cache
 D:\github\CheapAScHIPS\CheapAsChips\CheapAsChips\obj\Debug\CheapAsChips.dll
 D:\github\CheapAScHIPS\CheapAsChips\CheapAsChips\obj\Debug\CheapAsChips.pdb
 D:\github\CheapAScHIPS\CheapAsChips\CheapAsChips\obj\Debug\CheapAsChips.csprojResolveAssemblyReference.cache
-D:\github\CheapAScHIPS\CheapAsChips\CheapAsChips\obj\Debug\CheapAsChips.Migrations.init.resources
-D:\github\CheapAScHIPS\CheapAsChips\CheapAsChips\obj\Debug\CheapAsChips.csproj.GenerateResource.Cache
