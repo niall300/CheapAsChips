@@ -209,6 +209,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="WebSite\recipe.html" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -278,6 +279,7 @@
     <Content Include="Views\Recipe\AddMoreIngredients.cshtml" />
     <Content Include="Views\Recipe\AddToDatabse.cshtml" />
     <Content Include="Views\Recipe\AddInstructions.cshtml" />
+    <Content Include="Views\Recipe\RenderPhoto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -122,3 +122,5 @@ D:\github\CheapAScHIPS\CheapAsChips\CheapAsChips\obj\Debug\CheapAsChips.csproj.G
 D:\github\CheapAScHIPS\CheapAsChips\CheapAsChips\obj\Debug\CheapAsChips.dll
 D:\github\CheapAScHIPS\CheapAsChips\CheapAsChips\obj\Debug\CheapAsChips.pdb
 D:\github\CheapAScHIPS\CheapAsChips\CheapAsChips\obj\Debug\CheapAsChips.csprojResolveAssemblyReference.cache
+D:\github\CheapAScHIPS\CheapAsChips\CheapAsChips\bin\CheapAsChips.dll.CodeAnalysisLog.xml
+D:\github\CheapAScHIPS\CheapAsChips\CheapAsChips\bin\CheapAsChips.dll.lastcodeanalysissucceeded

@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using CheapAsChips.DAL;
 using CheapAsChips.Models;
 using System.IO;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace CheapAsChips.Controllers
 {
@@ -42,20 +44,28 @@ namespace CheapAsChips.Controllers
             return View(recipe);
         }
         //render photo from byte array
-        public System.Drawing.Image RenderPhoto(int RecipeID)
+        public ActionResult RenderPhoto(/*int RecipeID*/)
         {
             //get image data
-            RecipeImage image = db.Image.Find(RecipeID);
+            RecipeImage image = db.Image.Find(2);
             //add to byte array
             Byte[] imageArray = image.imagedata;
-            //convert to string
-            string myImagestring = Convert.ToBase64String(imageArray);
 
-            using (var ms = new MemoryStream(imageArray, 0, imageArray.Length))
+            using (Image myimage = Image.FromStream(new MemoryStream(imageArray)))
             {
-                System.Drawing.Image myimage = System.Drawing.Image.FromStream(ms, true);
-                return myimage;
+               
+                //myimage.Save("output.jpg", ImageFormat.Jpeg);  // Or Png
+                return View("myimage");
             }
+            
+            //convert to string
+            //string myImagestring = Convert.ToBase64String(imageArray);
+
+            //using (var ms = new MemoryStream(imageArray, 0, imageArray.Length))
+            //{
+            //    System.Drawing.Image myimage = System.Drawing.Image.FromStream(ms, true);
+            //    return myimage;
+            //}
 
 
         }
@@ -184,6 +194,12 @@ namespace CheapAsChips.Controllers
            //recipe.RecipeID;
 
             return RedirectToAction("AddIngredients", recipe);
+        }
+
+        public ActionResult DisplayImage(int recipeid)
+        {
+
+            return View();
         }
 
         //add ingredients
